@@ -56,7 +56,9 @@ props.showAlert("text is cleared","success")
 
   const [text, setText] = useState('');
   const words = text.split(/\s+/).filter((element) => element.length !== 0);
-  const minutes=text.split(/\s+/).filter((element) => element.length !== 0);
+  const minutes = text.split(/\s+/).filter((element) => element.length !== 0);
+  const characterCount = text.replace(/\s/g, '').length;
+
 
   return (
     <><div>
@@ -85,7 +87,7 @@ props.showAlert("text is cleared","success")
       </div>
       <div className="container my-3">
         <h1 style={{ color: props.mode === 'dark' ? 'white' : '#555555' }}>Your text summary</h1>
-        <p style={{ color: props.mode === 'dark' ? 'white' : '#555555' }}>{words.length} words and {text.length} characters</p>
+        <p aria-disabled={text.length===0}  style={{ color: props.mode === 'dark' ? 'white' : '#555555' }}>{words.length} words and {characterCount} characters</p>
         <p style={{ color: props.mode === 'dark' ? 'white' : '#555555' }}>{0.008 * minutes.length} Minutes Read</p>
         <h2 style={{ color: props.mode === 'dark' ? 'white' : '#555555' }}>Preview</h2>
         <p style={{ color: props.mode === 'dark' ? 'white' : '#555555' }}>
