@@ -14,6 +14,7 @@ const palettes = {
   red: { background: '#2b1114', surface: '#40191e' },
   green: { background: '#102319', surface: '#193526' },
   blue: { background: '#101b2d', surface: '#1b2b45' },
+  purple: { background: '#21142d', surface: '#342044' },
 } as const;
 
 function App() {
@@ -64,7 +65,7 @@ function App() {
             <div className="container my-4">
               <TextformComponent
                 showAlert={showAlert}
-                heading="Enter Your text to analyze Below"
+                heading="Try Textutils Word counter,Character counter remove extra space & save them"
                 mode={mode}
                 darkSurfaceColor={palettes[palette].surface}
               />

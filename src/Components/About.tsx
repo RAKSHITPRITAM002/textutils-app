@@ -18,7 +18,7 @@ export default function About() {
     if(mystyle.color === 'black'){
         setMyStyle({
         color:'white',
-        backgroundColor:'black',
+        backgroundColor:'#1fccd9',
         border:'2px solid white'
     })
     MyBtnTxt("Enable Light Mode")
@@ -42,6 +42,9 @@ export default function About() {
         </summary>
         <div className="accordion-body" style={mystyle}>
           <strong>This is all about text-utils.</strong> 
+        </div>
+        <div className="accordion-body" style={mystyle}>
+          <strong>This is Free to use </strong> 
         </div>
       </details>
       <div className="container my-3" style={mystyle}>

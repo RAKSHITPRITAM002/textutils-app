@@ -6,13 +6,13 @@ type NavbarProps = {
   title: string;
   mode: 'light' | 'dark';
   toggleMode: () => void;
-  palette: 'red' | 'green' | 'blue';
-  onPaletteChange: (palette: 'red' | 'green' | 'blue') => void;
+  palette: 'red' | 'green' | 'blue' | 'purple';
+  onPaletteChange: (palette: 'red' | 'green' | 'blue' | 'purple') => void;
 };
 
 export default function Navbar(props: NavbarProps) {
   const isDarkMode = props.mode === 'dark';
-  const palettes = ['red', 'green', 'blue'] as const;
+  const palettes = ['red', 'green', 'blue', 'purple'] as const;
 
   return (
     <div>
@@ -64,7 +64,7 @@ export default function Navbar(props: NavbarProps) {
                   {isDarkMode ? 'Dark' : 'Light'}
                 </label>
               </div>
-              <div className="palette-selector" role="group" aria-label="Dark mode color palette">
+              <div className="palette-selector" role="group" aria-label="Navbar color palette">
                 {palettes.map((palette) => (
                   <button
                     key={palette}
@@ -72,7 +72,6 @@ export default function Navbar(props: NavbarProps) {
                     className={`btn btn-sm palette-button palette-button-${palette}`}
                     aria-label={`${palette} palette`}
                     aria-pressed={props.palette === palette}
-                    disabled={!isDarkMode}
                     onClick={() => props.onPaletteChange(palette)}
                   >
                     {palette[0].toUpperCase() + palette.slice(1)}

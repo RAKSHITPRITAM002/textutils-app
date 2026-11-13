@@ -4,16 +4,20 @@
   border-bottom: 1px solid #e5e7eb;
 }
 
-.navbar.navbar-dark.palette-red {
+.navbar.palette-red {
   background-color: #42181d !important;
 }
 
-.navbar.navbar-dark.palette-green {
+.navbar.palette-green {
   background-color: #193b2c !important;
 }
 
-.navbar.navbar-dark.palette-blue {
+.navbar.palette-blue {
   background-color: #1a2d4b !important;
+}
+
+.navbar.palette-purple {
+  background-color: #392052 !important;
 }
 
 .navbar-brand,
@@ -21,8 +25,9 @@
   color: #111827 !important;
 }
 
-.navbar.navbar-dark .navbar-brand,
-.navbar.navbar-dark .nav-link {
+.navbar[class*="palette-"] .navbar-brand,
+.navbar[class*="palette-"] .nav-link,
+.navbar[class*="palette-"] .form-check-label {
   color: #f8f9fa !important;
 }
 
@@ -31,8 +36,8 @@
   color: #198754 !important;
 }
 
-.navbar.navbar-dark .nav-link:hover,
-.navbar.navbar-dark .nav-link.active {
+.navbar[class*="palette-"] .nav-link:hover,
+.navbar[class*="palette-"] .nav-link.active {
   color: #a7f3d0 !important;
 }
 
@@ -92,13 +97,13 @@
   background-color: #0d6efd;
 }
 
+.palette-button-purple {
+  background-color: #6f42c1;
+}
+
 .palette-button[aria-pressed="true"] {
   outline: 2px solid currentColor;
   outline-offset: 2px;
-}
-
-.palette-button:disabled {
-  opacity: 0.55;
 }
 
 @media (max-width: 768px) {

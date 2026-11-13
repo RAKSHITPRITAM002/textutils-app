@@ -55,6 +55,9 @@ props.showAlert("text is cleared","success")
   }
 
   const [text, setText] = useState('');
+  const words = text.split(/\s+/).filter((element) => element.length !== 0);
+  const minutes=text.split(/\s+/).filter((element) => element.length !== 0);
+
   return (
     <><div>
       <h1 style={{ color: props.mode === 'dark' ? 'white' : '#555555' }}>{props.heading}</h1>
@@ -72,21 +75,21 @@ props.showAlert("text is cleared","success")
         rows={10}
       ></textarea>
       <div>
-      <button type="submit"  onClick={handleUpClick} className="btn-solid theme-primary mx-2">Convert to Uppercase</button>
-      <button type="submit" onClick={handleLoClick} className="btn-solid theme-primary">Convert to Lowercase</button>
-      <button type="submit" onClick={handleSave} className="btn-solid theme-primary mx-3">Save</button>
-      <button type="submit" onClick={handleClearText} className="btn-solid theme-primary mx-3">Clear Text</button>
-      <button type="submit" onClick={handleCopy} className="btn-solid theme-primary">Copy Text</button>
+      <button disabled={text.length===0} type="submit"  onClick={handleUpClick} className="btn-solid theme-primary mx-2">Convert to Uppercase</button>
+      <button disabled={text.length===0} type="submit" onClick={handleLoClick} className="btn-solid theme-primary">Convert to Lowercase</button>
+      <button disabled={text.length===0} type="submit" onClick={handleSave} className="btn-solid theme-primary mx-3">Save</button>
+      <button disabled={text.length===0} type="submit" onClick={handleClearText} className="btn-solid theme-primary mx-3">Clear Text</button>
+      <button disabled={text.length===0} type="submit" onClick={handleCopy} className="btn-solid theme-primary">Copy Text</button>
 
       </div>
       </div>
       <div className="container my-3">
         <h1 style={{ color: props.mode === 'dark' ? 'white' : '#555555' }}>Your text summary</h1>
-        <p style={{ color: props.mode === 'dark' ? 'white' : '#555555' }}>{text.split(" ").length} words and {text.length} characters</p>
-        <p style={{ color: props.mode === 'dark' ? 'white' : '#555555' }}>{ 0.008 * text.split(" ").length} Minutes Read</p>
+        <p style={{ color: props.mode === 'dark' ? 'white' : '#555555' }}>{words.length} words and {text.length} characters</p>
+        <p style={{ color: props.mode === 'dark' ? 'white' : '#555555' }}>{0.008 * minutes.length} Minutes Read</p>
         <h2 style={{ color: props.mode === 'dark' ? 'white' : '#555555' }}>Preview</h2>
         <p style={{ color: props.mode === 'dark' ? 'white' : '#555555' }}>
-          {text.length > 0 ? text : 'Write something above to show here'}
+          {text.length > 0 ? text : 'Nothing to Preview'}
         </p>
       </div>
       </>
