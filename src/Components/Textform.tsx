@@ -8,8 +8,7 @@ export default function Textform(props: {
   darkSurfaceColor: string;
   heading: string | number | bigint | boolean | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<string | number | bigint | boolean | ReactPortal | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | null | undefined> | null | undefined;
 }) {
-  const handleUpClick=()=>{
-// console.log("Uppercase was clicked" + text);
+  const handleUpClick=()=>{;
 let newText=text.toUpperCase()
 setText(newText)
 props.showAlert("Uppercase is activated","success")
@@ -31,7 +30,6 @@ props.showAlert("Lowercase is activated","success")
   }
  
   const handleOnChange=(event: ChangeEvent<HTMLTextAreaElement>)=>{
-// console.log("Onchange");
 setText(event.target.value)
   }
 const handleCopy = async () => {
@@ -49,7 +47,6 @@ const handleCopy = async () => {
 }
  
   const handleClearText=()=>{
-// console.log("Onchange");
 setText('');
 props.showAlert("text is cleared","success")
   }
